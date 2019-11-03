@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="toto" class="spring.bean.User" >
+		<property name="name" value="toto" />
+		<property name="age" value="22" />
+		<property name="address" >
+			<ref bean="addressToto" />
+		</property>
+	</bean>
+	<bean id="addressToto" class="spring.bean.Address">
+		<property name="address" value="20 rue Degas" />
+		<property name="city" value="Toulon" />
+		<property name="zipcode" value="83" />
+	</bean>
+	<bean id="Arnold" class="spring.bean.User">
+		<property name="name" value="toto" />
+		<property name="age" value="22" />
+		<property name="address" ref="addressArnold" />
+	</bean>
+	<bean id="addressArnold" class="spring.bean.Address">
+		<property name="address" value="20 rue Degas" />
+		<property name="city" value="Toulon" />
+		<property name="zipcode" value="83" />
+	</bean>
+
+</beans>

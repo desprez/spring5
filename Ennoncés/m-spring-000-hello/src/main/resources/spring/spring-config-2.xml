@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="toto" class="spring.bean.User">
+		<property name="name">
+			<value>toto</value>
+		</property>
+		<property name="age">
+			<value>22</value>
+		</property>
+		<property name="address" ref="addressId" />
+	</bean>
+	<bean id="addressId" class="spring.bean.Address">
+		<property name="address">
+			<value>35 Av foch</value>
+		</property>
+		<property name="city">
+			<value>Paris</value>
+		</property>
+		<property name="zipcode">
+			<value>75002</value>
+		</property>
+	</bean>
+
+</beans>
