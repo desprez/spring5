@@ -18,9 +18,10 @@ public class HelloServiceImpl implements HelloService {
 	private String prop;
 
 	@Override
-	public void sayHello(String _msg) {
+	public String sayHello(String _msg) {
 		LOG.info(helloProperties.getMessage() + _msg);
 		LOG.info(prop);
+		return helloProperties.getMessage() + _msg;
 	}
 
 }
