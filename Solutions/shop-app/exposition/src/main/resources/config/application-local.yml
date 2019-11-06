@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://93e39703-1954-4721-bf06-0c318aefd9b0.497129fd685f442ca4df759dd55ec01b.databases.appdomain.cloud:30524/ibmclouddb?useSSL=false
+    username: ibm_cloud_1ac19115_d448_476c_b08d_da296d6ce667
+    password: bd2bb46b2a514c609da284181bcb2de3649e72a97fb8da2a37c314e45de0ab7e
+#Monitoring endpoints   
+management:
+   endpoints:
+      web:
+         exposure:
+            include: info, health, configprops, logfile, metrics, env, loggers
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    #org.hibernate.type.descriptor.sql.BasicBinder: TRACE
