@@ -9,4 +9,8 @@
 	
 	<bean id="springDeveloper" class="fr.training.spring.Developer" />
 
+	<aop:aspectj-autoproxy />
+
+	<bean id="loggingAspect"
+		class="fr.training.spring.LoggingAspect" />
 </beans>

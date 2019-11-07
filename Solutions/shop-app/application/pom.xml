@@ -42,5 +42,10 @@
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-spring</artifactId>
 		</dependency>
+		<!-- cache -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
 	</dependencies>
 </project>
