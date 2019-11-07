@@ -1,0 +1,1 @@
+insert into info(id,version,message) values (1, 1, 'Alex');
