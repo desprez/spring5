@@ -29,13 +29,13 @@ public class ItemServiceImplTest {
 	 * itemManagement of type ItemManagement
 	 */
 	@Autowired
-	private transient ItemManagement itemManagement;
+	private ItemManagement itemManagement;
 
 	/**
 	 * itemRepository of type ItemRepository
 	 */
 	@MockBean
-	private transient ItemRepository itemRepository;
+	private ItemRepository itemRepository;
 
 	@Test
 	public void testGetAllItems() {
@@ -44,8 +44,11 @@ public class ItemServiceImplTest {
 		when(itemRepository.getAllItems()).thenReturn(items);
 		List<ItemEntity> itemsResult = itemManagement.getAllItems();
 		itemManagement.getAllItems();
+		verify(itemRepository).getAllItems();
 		itemManagement.getAllItems();
+		verify(itemRepository).getAllItems();
 		itemManagement.getAllItems();
+		verify(itemRepository).getAllItems();
 		assertNotNull(itemsResult);
 		assertTrue(itemsResult.size() == 1);
 	}
