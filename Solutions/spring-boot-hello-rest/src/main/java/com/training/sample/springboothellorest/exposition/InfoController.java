@@ -1,5 +1,6 @@
 package com.training.sample.springboothellorest.exposition;
 
+import com.training.sample.springboothellorest.common.NotFoundException;
 import com.training.sample.springboothellorest.domaine.Info;
 import com.training.sample.springboothellorest.repository.InfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class InfoController {
     }
 
     @GetMapping("/{idInfo}")
-    public Info findOneRepo(@PathVariable Long idInfo){
-        return infoRepository.findById(idInfo).get();
+    public Info findOneRepo(@PathVariable Long idInfo) {
+        return infoRepository.findById(idInfo).orElseThrow(() -> new NotFoundException("id not found"));
     }
 }
