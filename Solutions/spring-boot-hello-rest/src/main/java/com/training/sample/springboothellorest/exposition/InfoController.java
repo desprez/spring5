@@ -4,6 +4,7 @@ import com.training.sample.springboothellorest.domaine.Info;
 import com.training.sample.springboothellorest.repository.InfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,5 +19,10 @@ public class InfoController {
     @GetMapping
     public List<Info> getAllInfo() {
         return infoRepository.findAll();
+    }
+
+    @GetMapping("/{idInfo}")
+    public Info findOneRepo(@PathVariable Long idInfo){
+        return infoRepository.findById(idInfo).get();
     }
 }
