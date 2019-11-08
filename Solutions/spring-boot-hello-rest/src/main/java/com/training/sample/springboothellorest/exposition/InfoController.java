@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class InfoController {
     }
 
     @GetMapping("/{idInfo}")
-    public Info findOneRepo(@PathVariable Long idInfo) {
-        return infoRepository.findById(idInfo).orElseThrow(() -> new NotFoundException("id not found"));
+    public Mono<Info> findOneRepo(@PathVariable Long idInfo) {
+        return Mono.just(infoRepository.findById(idInfo).orElseThrow(() -> new NotFoundException("id not found")));
     }
 }
