@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/library?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: admin
+#Monitoring endpoints   
+management:
+   endpoints:
+      web:
+         exposure:
+            include: info, health, configprops, logfile, metrics, env, loggers
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    #org.hibernate.type.descriptor.sql.BasicBinder: TRACE
