@@ -1,27 +1,34 @@
 package fr.training.samples.spring.shop.webmvc;
 
-import fr.training.samples.spring.shop.samples.spring.shop.application.item.ItemManagement;
-import fr.training.samples.spring.shop.samples.spring.shop.domain.item.ItemEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
 public class ItemController {
 
     @Autowired
-    private ItemManagement itemManagement;
+    private RestTemplate restTemplate;
 
-    @Autowired
-    private ItemMapper itemMapper;
+    @Value("${spring.shop.showItems.url}")
+    private String showItemsUrl;
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 
     @RequestMapping("/items")
     public ModelAndView showItems() {
-        final List<ItemEntity> itemEntities = itemManagement.getAllItems();
-        List<ItemDTO> items = itemMapper.mapToDtoList(itemEntities);
+        ItemDTO[] response = restTemplate.getForObject(showItemsUrl, ItemDTO[].class);
+        List<ItemDTO> items = Arrays.asList(response);
         return new ModelAndView("items", "items", items);
     }
 

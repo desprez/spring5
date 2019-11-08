@@ -12,8 +12,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  *
  */
 @SpringBootApplication
-@ComponentScan(basePackages = { "fr.training.samples.spring.shop" })
-@EnableJpaRepositories(basePackages = "fr.training.samples.spring.shop.infrastructure")
 public class SpringBootApp extends SpringBootServletInitializer {
 
   /**

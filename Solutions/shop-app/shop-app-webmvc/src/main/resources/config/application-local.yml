@@ -1,10 +1,5 @@
 server:
   port: 8080
-spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/library?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: root
-    password: admin
 #Monitoring endpoints   
 management:
    endpoints:
@@ -14,4 +9,7 @@ management:
 logging:
   level:
     org.hibernate.SQL: DEBUG
-    #org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+spring:
+  shop:
+    showItems:
+      url: http://localhost:8081/api/items
