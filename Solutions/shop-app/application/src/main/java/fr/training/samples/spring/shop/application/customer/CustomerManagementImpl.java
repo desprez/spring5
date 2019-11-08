@@ -1,31 +1,44 @@
 package fr.training.samples.spring.shop.application.customer;
 
-import fr.training.samples.spring.shop.domain.customer.CustomerEntity;
-import fr.training.samples.spring.shop.domain.customer.CustomerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import fr.training.samples.spring.shop.domain.customer.CustomerEntity;
+import fr.training.samples.spring.shop.domain.customer.CustomerRepository;
 
-@Transactional
+/**
+ * @author Badr NASS
+ *
+ */
 @Service
-public class CustomerManagementImpl implements CustomerManagement{
+@Transactional
+public class CustomerManagementImpl implements CustomerManagement {
 
-    @Autowired
-    private CustomerRepository customerRepository;
+	/**
+	 * customerRepository of type CustomerRepository
+	 */
+	private final transient CustomerRepository customerRepository;
 
-    @Override
-    public CustomerEntity create(CustomerEntity customer) {
-        return customerRepository.create(customer);
-    }
+	/**
+	 * @param customerRepository
+	 */
+	public CustomerManagementImpl(final CustomerRepository customerRepository) {
+		super();
+		this.customerRepository = customerRepository;
+	}
 
-    @Override
-    public CustomerEntity findOne(String customerID) {
-        return customerRepository.findOne(customerID);
-    }
+	@Override
+	public CustomerEntity create(final CustomerEntity customerEntity) {
+		return customerRepository.create(customerEntity);
+	}
 
-    @Override
-    public CustomerEntity update(CustomerEntity customerEntity) {
-        return customerRepository.update(customerEntity);
-    }
+	@Override
+	public CustomerEntity findOne(final String customerID) {
+		return customerRepository.findOne(customerID);
+	}
+
+	@Override
+	public CustomerEntity update(CustomerEntity customerEntity) {
+		return customerRepository.update(customerEntity);
+	}
 }

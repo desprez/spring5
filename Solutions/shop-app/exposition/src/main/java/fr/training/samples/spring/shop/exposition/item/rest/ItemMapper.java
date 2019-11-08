@@ -1,12 +1,13 @@
 package fr.training.samples.spring.shop.exposition.item.rest;
 
-import fr.training.samples.spring.shop.domain.item.ItemEntity;
-import fr.training.samples.spring.shop.domain.item.ItemVO;
-import fr.training.samples.spring.shop.exposition.common.AbstractMapper;
 import org.springframework.stereotype.Component;
 
+import fr.training.samples.spring.shop.common.AbstractMapper;
+import fr.training.samples.spring.shop.domain.item.ItemEntity;
+import fr.training.samples.spring.shop.domain.item.ItemVO;
+
 /**
- * @author Mapper for the entity ItemEntity and its DTO ItemDTO.
+ * @author Badr NASS Mapper for the entity ItemEntity and its DTO ItemDTO.
  * 
  */
 @Component
