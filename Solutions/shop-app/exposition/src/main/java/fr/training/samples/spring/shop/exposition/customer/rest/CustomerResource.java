@@ -119,7 +119,7 @@ public class CustomerResource {
 
 	@Scheduled(fixedRate = Timer.ONE_HOUR)
 	private void refreshSpecialCustomerCache(){
-		LOG.info("cache refresh called every xxx");
+		LOG.info("cache refresh called every {} sec" , Timer.ONE_HOUR/1000);
 		customerManagement.resetCache();
 		customerManagement.findOne(Constants.SPECIAL_CUSTOMER_NUMBER);
 	}
