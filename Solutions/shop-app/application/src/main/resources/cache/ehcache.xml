@@ -24,4 +24,12 @@
            diskExpiryThreadIntervalSeconds="120"
            memoryStoreEvictionPolicy="LRU"/>
 
+	<cache name="customerCache"
+		   maxElementsInMemory="10000"
+		   eternal="false"
+		   timeToLiveSeconds="1200"
+		   overflowToDisk="false"
+		   diskPersistent="false"
+		   diskExpiryThreadIntervalSeconds="120"
+		   memoryStoreEvictionPolicy="LRU"/>
 </ehcache>

@@ -7,9 +7,6 @@ spring:
     enabled: false
   jpa:
     open-in-view: false
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-    hibernate:
-      ddl-auto: update
   cache:
     jcache:
       config: classpath:cache/ehcache.xml

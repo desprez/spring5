@@ -17,9 +17,9 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<spring-boot.version>2.0.9.RELEASE</spring-boot.version>
+		<spring-boot.version>2.3.0.RELEASE</spring-boot.version>
+		<springdoc.version>1.4.0</springdoc.version>
 		<logstash-logback-encoder.version>5.3</logstash-logback-encoder.version>
-		<springfox-version>2.9.2</springfox-version>
 		<cucumber.java.version>1.2.5</cucumber.java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -105,6 +105,12 @@
 				<artifactId>cucumber-spring</artifactId>
 				<version>${cucumber.java.version}</version>
 				<scope>test</scope>
+			</dependency>
+			<!-- OpenAPI 3 -->
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-ui</artifactId>
+				<version>${springdoc.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
