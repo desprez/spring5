@@ -1,16 +1,15 @@
 package fr.training.spring;
 
-
 public class DependencyInjectionDeveloper {
-	
-	private Task task;
-	
-	public DependencyInjectionDeveloper(Task task) {
+
+	private final Task task;
+
+	public DependencyInjectionDeveloper(final Task task) {
 		this.task = task;
 	}
-	
+
 	public void doTask() {
 		task.execute();
 	}
-	
+
 }

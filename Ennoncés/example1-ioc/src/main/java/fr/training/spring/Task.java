@@ -1,7 +1,8 @@
 package fr.training.spring;
 
-@FunctionalInterface interface Task {
+@FunctionalInterface
+interface Task {
 
 	void execute();
-	
+
 }

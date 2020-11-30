@@ -10,12 +10,12 @@ public class Developer {
 	@Autowired
 	@Qualifier("documentingTask")
 	private Task task;
-	
+
 	public Developer() {
 	}
-	
+
 	public void doTask() {
 		task.execute();
 	}
-	
+
 }
